@@ -19,11 +19,8 @@ def additionform():
     if request.method == "POST":
         num1 = request.form["num1"]
         num2 = request.form["num2"]
-        # try:
-        #     sum = int(num1) + int(num2)
-        # except ValueError:
-        #     print("Enter a number")
-        # return render_template("output.html", sum=sum, num1=num1, num2=num2)
+        sum = int(num1) + int(num2)
+        return render_template("output.html", sum=sum, num1=num1, num2=num2)
     return render_template("additionForm.html")
 
 
