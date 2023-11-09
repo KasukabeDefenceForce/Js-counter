@@ -1,0 +1,69 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>Form</title>
+{% endblock %}
+
+{% block content %}
+<h1>
+    Text Form
+</h1>
+<form id="form" method="post">
+    <table>
+    <tr>
+        <td>Name</td>
+        <td>
+            <input id="text" type="text" value="{{request.form["name"]}}" name="name">
+            {% if errors['name']%}
+            <ul>
+                {% for e in errors['name'] %}
+                    <li>{{e}}</li>
+                {%endfor%}
+            </ul>      
+            {%endif%}
+        </td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>
+            <input id="phone" type="number" value="{{request.form["phone"]}}" name="phone">
+            {% if errors['phone']%}
+            <ul>
+                {% for e in errors['phone'] %}
+                <li>{{e}}</li>
+                {%endfor%}
+            </ul>
+            {%endif%}
+        </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>
+            <input id="email" type="email" value="{{request.form["email"]}}" name="email">
+            {% if errors['email']%}
+            <ul>
+                {% for e in errors['email'] %}
+                <li>{{e}}</li>
+                {%endfor%}
+            </ul>
+            {%endif%}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button>Submit</button>
+        </td>
+    </tr>
+    </table>
+    <br/>
+    <h1>Instructions</h1>
+    <div>
+        <ul>
+            <li>No fields can be left empty</li>
+            <li>"Name" field cannot start with a number or special character</li>
+            <li>"Phone" field cannot be zero or negative</li>
+            <li>"Email" field cannot start with a capital letter, digit or special character.</li>
+        </ul>
+    </div>
+</form>
+{% endblock %}

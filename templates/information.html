@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block title %}
+<title>Information</title>
+{% endblock %}
+
+{% block content %}
+<h1>Here is your information:</h1>
+<p>Name: {{name}}</p>
+<p>Phone: {{phone}}</p>
+<p>Email: {{email}}</p>
+<a href="{{url_for('textform')}}">Go back to Form</a>
+{% endblock %}

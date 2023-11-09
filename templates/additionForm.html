@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+
+{% block title %}
+    <title>Form</title>
+{% endblock %}
+
+{% block content %}
+<h1>
+    Addition Form
+</h1>
+    <form id="form" method=post>
+        <div>
+            <label for="num1">Number 1:</label>
+            <input id="num1" type="number" name="num1">
+        </div>
+        <div>
+            <label for="num2">Number 2:</label>
+            <input id="num2" type="number" name="num2">
+        </div>
+        <button>Submit</button>
+    </form>
+{% endblock %}
