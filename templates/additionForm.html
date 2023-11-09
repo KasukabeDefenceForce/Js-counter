@@ -8,15 +8,19 @@
 <h1>
     Addition Form
 </h1>
-    <form id="form" method=post>
-        <div>
+    <form id="form" action="{{url_for('additionform')}}" method="post">
+        <div class="input-control">
             <label for="num1">Number 1:</label>
-            <input id="num1" type="number" required name="num1">
+            <input id="num1" required name="num1">
+            <div class="error"></div>
         </div>
-        <div>
+        <div class="input-control">
             <label for="num2">Number 2:</label>
-            <input id="num2" type="number" required name="num2">
+            <input id="num2" required name="num2">
+            <div class="error"></div>
         </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
     </form>
+    <script src="{{url_for('static', filename='additionFormValidation.js')}}">
+    </script>
 {% endblock %}

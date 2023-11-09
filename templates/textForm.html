@@ -13,7 +13,7 @@
     <tr>
         <td>Name</td>
         <td>
-            <input id="text" type="text" value="{{request.form["name"]}}" name="name">
+            <input id="text" type="text" value="{{request.form["name"]}}" required name="name">
             {% if errors['name']%}
             <ul>
                 {% for e in errors['name'] %}
@@ -26,7 +26,7 @@
     <tr>
         <td>Phone</td>
         <td>
-            <input id="phone" type="number" value="{{request.form["phone"]}}" name="phone">
+            <input id="phone" type="number" value="{{request.form["phone"]}}" required name="phone">
             {% if errors['phone']%}
             <ul>
                 {% for e in errors['phone'] %}
@@ -39,7 +39,7 @@
     <tr>
         <td>Email</td>
         <td>
-            <input id="email" type="email" value="{{request.form["email"]}}" name="email">
+            <input id="email" type="email" value="{{request.form["email"]}}" required name="email">
             {% if errors['email']%}
             <ul>
                 {% for e in errors['email'] %}
